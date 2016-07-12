@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="pt" manifest="manifest.appcache">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>App Cache</title>
+  <script>
+  var appCache = window.applicationCache;
+  appCache.addEventListener('updateready', function () {
+        if (appCache.status == appCache.UPDATEREADY) {
+            appCache.swapCache();
+            appCache.update();
+            //window.location.reload();
+        }
+    });
+  </script>
+</head>
+<body>
+  <img src="img/games.jpg" alt="" />
+</body>
+</html>

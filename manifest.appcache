@@ -1,0 +1,10 @@
+CACHE MANIFEST
+#v1 04-07-16
+CACHE:
+img/games.jpg
+
+NETWORK:
+*
+
+FALLBACK:
+aplicativo/ img/fallback.jpg
