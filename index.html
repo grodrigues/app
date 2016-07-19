@@ -1,0 +1,119 @@
+<!DOCTYPE HTML>
+<html>
+	<head>
+		<title>Spoiler Hunter</title>
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<meta charset="utf-8">
+		<link rel="stylesheet" type="text/css" href="css/bootstrap.min.css" media="screen">
+		<link rel="stylesheet" type="text/css" href="css/estilo.css" media="screen">
+		<!--<script async defer src='https://maps.googleapis.com/maps/api/js?key=AIzaSyAhjKbZZMDnAYtnhcINz82maxKieSlCmWg&callback=iniciarMapa'></script>-->
+
+		
+	</head>
+
+	<body>
+
+		<?php $menuativo = basename($_SERVER['SCRIPT_NAME']); ?>
+<?php 
+include 'topo.php'
+?>
+
+		<div class="container">
+			<div class="row">
+				<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+					<form id="sms-form">
+						<div class="form-group">
+							<label for="nome" class="col-xs-1 control-label">Nome:</label>
+							<div class="col-xs-11">
+								<input type="text" class="form-control" id="nome" placeholder="Nome"/>
+							</div>
+						</div>
+						<div>
+							<div class="form-group">
+								<label for="txt" class="col-xs-1 control-label">Mensagem:</label>
+                                <textarea id="txt" class="form-control" rows="3"></textarea>
+								<div>
+								<button type="submit" class="btn btn-default">Submit</button>		
+								</div>
+							</div>
+						</div>
+					</form>
+				</div>
+			</div> 
+		</div> <br><br>
+        
+        <section id="msgs">
+        	<button onclick="getLocation()">Pegar Localização!</button>
+        	<div id="demo"></div>
+
+        
+        <h1>Mensagens enviadas</h1>
+        
+        	<table class="table table-striped" id="msgs-table">
+            	<thead>
+                	<tr>
+                    	<th>Nome</th>
+                    	<th>Mensagem</th>
+                    	<th>Data/Hora</th>
+                    	<th>Lat</th>
+                    	<th>Lng</th>
+                	</tr>
+            	</thead>
+            	<tbody></tbody>
+        	</table>
+    </section>
+</div>
+
+		<!--
+		<footer>
+			<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 rodape">
+				<p>Todos os direitos reservados. spoilerhunter.com</p>
+			</div>
+		</footer> -->
+
+		
+		<script>
+			function getLocation() {
+			  if (navigator.geolocation) {
+			    navigator.geolocation.getCurrentPosition(showPosition, showError);
+			  } else {
+			    var status = document.getElementById("demo");
+			    status.innerHTML = "Geolocation is not supported by this browser.";
+			  }
+			}
+
+			function showPosition(position) {
+			  var geoPoint = position.coords.latitude + "," + position.coords.longitude;
+			  var status = document.getElementById("demo");
+			  status.innerHTML = "Your location is: " + position.coords.latitude + " ,  " + position.coords.longitude;
+
+			  // Get a nice map tile from google maps
+			/*  var img_url = "http://maps.googleapis.com/maps/api/staticmap?center=" +
+			    geoPoint + "&zoom=14&size=400x300&sensor=false";
+			  document.getElementById("map").innerHTML = "<img src='" + img_url + "'>";*/
+			}
+
+			// show our errors for debuging
+			function showError(error) {
+			  var x = document.getElementById("demo");
+			  switch (error.code) {
+			    case error.PERMISSION_DENIED:
+			      x.innerHTML = "Denied the request for Geolocation. Maybe, ask the user in a more polite way?"
+			      break;
+			    case error.POSITION_UNAVAILABLE:
+			      x.innerHTML = "Location information is unavailable.";
+			      break;
+			    case error.TIMEOUT:
+			      x.innerHTML = "The request to get location timed out.";
+			      break;
+			    case error.UNKNOWN_ERROR:
+			      x.innerHTML = "An unknown error occurred :(";
+			      break;
+			  }
+			}
+  		</script>
+  		<script type="text/javascript" src="https://code.jquery.com/jquery-2.2.4.min.js"></script>
+		<script type="text/javascript" src="js/bootstrap.min.js"></script>
+		<script type="text/javascript" src="js/main.js"></script>
+	</body>
+</html>
