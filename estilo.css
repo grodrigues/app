@@ -1,5 +1,6 @@
-body{
-	color:  #8e8e8e;
+*{
+	font-family: 'lato', sans-serif;
+	font-weight: 300;
 }
 
 .logo{
@@ -14,21 +15,47 @@ body{
 	-o-transition: 0.2s linear;
 }
 
+section{
+	padding-top: 170px;
+	min-height: 100vh;
+}
+
+.sessao_cinza{
+	background: url(../img/dark_embroidery.png); 
+}
+
+.sessao_cinza h1{
+	color: #fff;
+}
+
+.sessao_cinza p{
+	color: #fff;
+}
+
+.sessao_cinza label{
+	color: #fff;
+}
+
+.sessao_branca{
+	background: url(../img/exclusive_paper.png);
+}
+
 .divisor{background: #8e8e8e; color: #8e8e8e;}
 
-.rodape{ background: #ba7d04; color: #fff; padding-top: 40px; padding-bottom: 40px; position: absolute; bottom: 0;  text-align: center;}
+.rodape{ background: #369fcf; color: #fff; padding-top: 50px; padding-bottom: 50px; position: absolute; bottom: 0; text-align: center;}
 
 .formulario{
 	margin-top: 50px;
 }
 
-.equipe{
-	margin-top: 50px;
-	width: 100%;
+.equipe article{
+	padding-top: 40px;
 }
 
+
 .equipe p{
-	text-align: center;
+	padding-top: 30px;
+	text-align: justify;
 }
 
 .equipe .andre:hover{
@@ -61,10 +88,6 @@ body{
 	-moz-transition: 0.2s linear;
 	-ms-transition: 0.2s linear;
 	-o-transition: 0.2s linear;
-}
-
-.spoilers{
-	margin-top: 50px;
 }
 
 #bloco {
@@ -108,21 +131,4 @@ body{
 	50% {background-image: url(img/got-3.jpg);}
 	75%	{background-image: url(img/got-4.jpg);}
 	100%{background-image: url(img/got-1.jpg);}
-}
-
-a{
-	color: #ba7d04;
-}
-
-a:hover{
-	color: #DDBE82;
-}
-
-.nav-tabs>li.active>a, .nav-tabs>li.active>a:focus, .nav-tabs>li.active>a:hover{
-	 color: #8e8e8e;
-}
-
-.pagination>.active>a, .pagination>.active>a:focus, .pagination>.active>a:hover, .pagination>.active>span, .pagination>.active>span:focus, .pagination>.active>span:hover{
-	background-color: #8e8e8e;
-	border-color: #8e8e8e;
 }

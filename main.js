@@ -1,7 +1,6 @@
 /* $(function(){
 	alert("Está página contém Spoiler. Deseja continuar?");
 }); */
-
 $('#myTabs a').click(function (e) {
   e.preventDefault()
   $(this).tab('home')
@@ -16,7 +15,6 @@ $('#myTabs a').click(function (e) {
   e.preventDefault()
   $(this).tab('show')
 })
-
 
 // JavaScript Document
 var SMS = {
@@ -116,3 +114,13 @@ var SMS = {
 	
 };
 SMS.init();
+
+$ (document) .ready ( 
+
+  function () { 
+
+    $ ( "html") niceScroll ();. 
+
+  } 
+
+);

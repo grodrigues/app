@@ -6,37 +6,122 @@
 		<meta charset="utf-8">
 		<link rel="stylesheet" type="text/css" href="css/bootstrap.min.css" media="screen">
 		<link rel="stylesheet" type="text/css" href="css/estilo.css" media="screen">
+		<!--<script async defer src='https://maps.googleapis.com/maps/api/js?key=AIzaSyAhjKbZZMDnAYtnhcINz82maxKieSlCmWg&callback=iniciarMapa'></script>-->	
 	</head>
 
-	<body>
+	<body data-spy="scroll" data-target=".menu-navegacao" data-offset="80">
 
-		<?php $menuativo = basename($_SERVER['SCRIPT_NAME']); ?>
-<?php 
-include 'topo.php'
-?>
+		<nav class="navbar navbar-default navbar-fixed-top">
+			<div class="container">
+				<div class="navbar-header logo">
+					<button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#menu-navegacao">
+						<span class="icon-bar"></span>
+						<span class="icon-bar"></span>
+						<span class="icon-bar"></span>
+					</button>
+					<div class="col-xs-6 col-sm-6 col-md-7 col-lg-8">
+					<a href="#page-top"><img src="img/logotipo-site.png" class="img-responsive" alt="Logotipo do Site"></a>
+					</div>
+				</div>
+				<div class="collapse navbar-collapse menu-navegacao" id="menu-navegacao">
+					<ul class="nav navbar-nav navbar-right">
+						<li><a href="#formulario">Envie seu Spoiler</a></li>
+						<li><a href="#mensagensenviadas">Spoilers</a></li>
+						<li><a href="#equipe">Equipe</a></li>
+					</ul>
+				</div>
+			</div>
+		</nav>
 
-		<div class="container">
-			<div class="row">
+		<!-- Início Sessão Enviar Spoiler -->
+
+		<section id="formulario" class="sessao_cinza">
+			<div class="container">
 				<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
-					<form>
+					<header class="page-header">
+						<h1>Formulário <small>Deixe seu spoiler</small></h1>
+					</header>
+					<form class="form-horizontal formulario" id="sms-form">
 						<div class="form-group">
-							<label for="nome" class="col-xs-1 control-label">Nome:</label>
-							<div class="col-xs-11">
-								<input type="text" class="form-control" id="nome" />
+							<label for="nome" class="col-xs-12 col-sm-12 col-md-2 col-md-2 control-label">Nome:</label>
+							<div class="col-xs-12 col-sm-12 col-md-9 col-lg-9">
+								<input type="text" class="form-control" id="nome" placeholder="Digite seu nome / apelido"/>
 							</div>
 						</div>
 						<div>
 							<div class="form-group">
-								<label for="mensagem" class="col-xs-1 control-label">Mensagem:</label>
-								<div>
-									
+								<label for="txt" class="col-xs-12 col-sm-12 col-md-2 col-md-2 control-label">Mensagem:</label>
+								<div class="col-xs-12 col-sm-12 col-md-9 col-lg-9">
+                                	<textarea id="txt" class="form-control" rows="5" placeholder="Digite aqui sua mensagem"></textarea>
+                                </div>
+							</div>
+							<div class="form-group">
+								<div class="col-xs-offset-2 col-xs-9">
+									<button type="submit" class="btn btn-success" onclick="getLocation()">Enviar</button>
 								</div>
 							</div>
 						</div>
 					</form>
 				</div>
 			</div> 
-		</div> <br><br>
+		</section>
+
+		<!-- Fim Sessão Enviar Spoiler -->
+
+		<!-- Início Sessão Mensagens Enviadas -->
+        
+        <section id="mensagensenviadas" class="sessao_branca">
+        	<div class="container"  id="msgs">
+	        	<div class="row">
+				    <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12" id="bloco">
+			        	<div id="demo"></div>
+			        	<header>
+			        		<h1>Spoilers <small>Leia os melhores spoilers da internet</small></h1>
+			        	</header>
+
+			        	<table class="table table-responsive" cellpadding="5" id="msgs-table">
+			            	<thead>
+			                	<tr>
+			                    	<th>Nome</th>
+			                    	<th>Mensagem</th>
+			                    	<th>Data/Hora</th>
+			                    	<th>Lat</th>
+			                    	<th>Lng</th>
+			                	</tr>
+			            	</thead>
+			        	</table>
+	        		</div>
+        		</div>
+        	</div>
+    	</section>
+
+    	<!-- Fim Sessão Mensagens Enviadas -->
+
+    	<!-- início Sessão Equipe -->
+
+    	<section id="equipe" class="sessao_cinza">
+			<div class="container equipe">
+				<header>
+					<h1>Equipe <small>Quem participou do projeto</small></h1>
+				</header>
+				<article class="col-xs-12 col-sm-6 col-md-3 col-lg-3 andre">
+					<img src="img/Andre.jpg" alt="André Luiz" class="img-thumbnail img-responsive center-block">
+					<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut orci quam, laoreet eu posuere in, facilisis sed quam. Quisque dignissim orci hendrerit augue ornare, eget vehicula urna auctor.</p>
+				</article>
+				<article class="col-xs-12 col-sm-6 col-md-3 col-lg-3 gustavo">
+					<img src="img/Gustavo.jpg" alt="Gustavo" class="img-thumbnail img-responsive center-block">
+					<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut orci quam, laoreet eu posuere in, facilisis sed quam. Quisque dignissim orci hendrerit augue ornare, eget vehicula urna auctor.</p>
+				</article>
+				<article class="col-xs-12 col-sm-6 col-md-3 col-lg-3 joselio">
+					<img src="img/Joselio.jpg" alt="Josélio Pacheco" class="img-thumbnail img-responsive center-block">
+					<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut orci quam, laoreet eu posuere in, facilisis sed quam. Quisque dignissim orci hendrerit augue ornare, eget vehicula urna auctor.</p>
+				</article>
+				<article class="col-xs-12 col-sm-6 col-md-3 col-lg-3 mayara">
+					<img src="img/Mayara.jpg" alt="Mayara Almeida" class="img-thumbnail img-responsive center-block">
+					<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut orci quam, laoreet eu posuere in, facilisis sed quam. Quisque dignissim orci hendrerit augue ornare, eget vehicula urna auctor.</p>
+				</article>
+			</div> 
+		</section>
 
 		<!--
 		<footer>
@@ -45,9 +130,51 @@ include 'topo.php'
 			</div>
 		</footer> -->
 
-		<script type="text/javascript" src="js/jquery-3.1.0.min.js"></script>
+		
+		<script>
+			function getLocation() {
+			  if (navigator.geolocation) {
+			    navigator.geolocation.getCurrentPosition(showPosition, showError);
+			  } else {
+			    var status = document.getElementById("demo");
+			    status.innerHTML = "Geolocation is not supported by this browser.";
+			  }
+			}
+
+			function showPosition(position) {
+			  var geoPoint = position.coords.latitude + "," + position.coords.longitude;
+			  var status = document.getElementById("demo");
+			  status.innerHTML = "Your location is: " + position.coords.latitude + " ,  " + position.coords.longitude;
+
+			  // Get a nice map tile from google maps
+			/*  var img_url = "http://maps.googleapis.com/maps/api/staticmap?center=" +
+			    geoPoint + "&zoom=14&size=400x300&sensor=false";
+			  document.getElementById("map").innerHTML = "<img src='" + img_url + "'>";*/
+			}
+
+			// show our errors for debuging
+			function showError(error) {
+			  var x = document.getElementById("demo");
+			  switch (error.code) {
+			    case error.PERMISSION_DENIED:
+			      x.innerHTML = "Denied the request for Geolocation. Maybe, ask the user in a more polite way?"
+			      break;
+			    case error.POSITION_UNAVAILABLE:
+			      x.innerHTML = "Location information is unavailable.";
+			      break;
+			    case error.TIMEOUT:
+			      x.innerHTML = "The request to get location timed out.";
+			      break;
+			    case error.UNKNOWN_ERROR:
+			      x.innerHTML = "An unknown error occurred :(";
+			      break;
+			  }
+			}
+  		</script>
+
+  		<script type="text/javascript" src="https://code.jquery.com/jquery-2.2.4.min.js"></script>
 		<script type="text/javascript" src="js/bootstrap.min.js"></script>
 		<script type="text/javascript" src="js/main.js"></script>
-		
+		<script type="text/javascript" src="js/jquery.nicescroll.js"></script>
 	</body>
 </html>
