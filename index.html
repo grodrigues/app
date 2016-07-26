@@ -1,12 +1,12 @@
 <!DOCTYPE HTML>
-<html>
+<html lang="pt" manifest="manifest.appcache">
 	<head>
 		<title>Spoiler Hunter</title>
 		<meta name="viewport" content="width=device-width, initial-scale=1.0">
 		<meta charset="utf-8">
 		<link rel="stylesheet" type="text/css" href="css/bootstrap.min.css" media="screen">
 		<link rel="stylesheet" type="text/css" href="css/estilo.css" media="screen">
-		<!--<script async defer src='https://maps.googleapis.com/maps/api/js?key=AIzaSyAhjKbZZMDnAYtnhcINz82maxKieSlCmWg&callback=iniciarMapa'></script>-->	
+		<!--<script async defer src='https://maps.googleapis.com/maps/api/js?key=AIzaSyAhjKbZZMDnAYtnhcINz82maxKieSlCmWg&callback=iniciarMapa'></script>-->
 	</head>
 
 	<body data-spy="scroll" data-target=".menu-navegacao" data-offset="80">
@@ -63,13 +63,13 @@
 						</div>
 					</form>
 				</div>
-			</div> 
+			</div>
 		</section>
 
 		<!-- Fim Sessão Enviar Spoiler -->
 
 		<!-- Início Sessão Mensagens Enviadas -->
-        
+
         <section id="mensagensenviadas" class="sessao_branca">
         	<div class="container"  id="msgs">
 	        	<div class="row">
@@ -120,7 +120,7 @@
 					<img src="img/Mayara.jpg" alt="Mayara Almeida" class="img-thumbnail img-responsive center-block">
 					<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut orci quam, laoreet eu posuere in, facilisis sed quam. Quisque dignissim orci hendrerit augue ornare, eget vehicula urna auctor.</p>
 				</article>
-			</div> 
+			</div>
 		</section>
 
 		<!--
@@ -130,7 +130,7 @@
 			</div>
 		</footer> -->
 
-		
+
 		<script>
 			function getLocation() {
 			  if (navigator.geolocation) {
@@ -170,6 +170,14 @@
 			      break;
 			  }
 			}
+			var appCache = window.applicationCache;
+		  appCache.addEventListener('updateready', function () {
+		        if (appCache.status == appCache.UPDATEREADY) {
+		            appCache.swapCache();
+		            appCache.update();
+		            //window.location.reload();
+		        }
+		    });
   		</script>
 
   		<script type="text/javascript" src="https://code.jquery.com/jquery-2.2.4.min.js"></script>
