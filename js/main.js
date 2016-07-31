@@ -114,3 +114,13 @@ var SMS = {
 
 };
 SMS.init();
+
+$ (document) .ready (
+
+  function () {
+
+    $ ( "html") niceScroll ();.
+
+  }
+
+);
