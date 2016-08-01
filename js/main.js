@@ -115,12 +115,12 @@ var SMS = {
 };
 SMS.init();
 
-$ (document) .ready (
+/*$ (document) .ready (
 
   function () {
 
-    $ ( "html") niceScroll ();.
+    $ ( "html") niceScroll ();
 
   }
 
-);
+);*/
